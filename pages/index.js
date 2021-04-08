@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>jsNews</title>
+        <title>jsNews - ReactJs Application</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
