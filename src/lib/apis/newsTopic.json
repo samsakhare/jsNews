@@ -1,0 +1,32 @@
+[
+    {
+        "newsId": 1,
+        "newsTopic": "bitcoin",
+        "api": "https://newsapi.org/v2/everything?q=bitcoin&from=2021-04-08&to=2021-04-08&sortBy=popularity&apiKey=b02ed6d3130f475e81da9f518e594461",
+        "displayTitle": "bitcoin"
+    },
+    {
+        "newsId": 2,
+        "newsTopic": "usa",
+        "api": "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=b02ed6d3130f475e81da9f518e594461",
+        "displayTitle": "U.S.A"
+    },
+    {
+        "newsId": 3,
+        "newsTopic": "apple",
+        "api": "https://newsapi.org/v2/everything?q=apple&from=2021-04-08&to=2021-04-08&sortBy=popularity&apiKey=b02ed6d3130f475e81da9f518e594461",
+        "displayTitle": "apple"
+    },
+    {
+        "newsId": 4,
+        "newsTopic": "techcrunch",
+        "api": "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=b02ed6d3130f475e81da9f518e594461",
+        "displayTitle": "tech crunch"
+    },
+    {
+        "newsId": 5,
+        "newsTopic": "wsj",
+        "api": "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=b02ed6d3130f475e81da9f518e594461",
+        "displayTitle": "wall street journal"
+    }
+]
