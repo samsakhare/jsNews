@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <div className="bg-gray-400 p-2">
+      <div className="bg-gray-100 p-2">
         <Component {...pageProps} />
       </div>
     </>
