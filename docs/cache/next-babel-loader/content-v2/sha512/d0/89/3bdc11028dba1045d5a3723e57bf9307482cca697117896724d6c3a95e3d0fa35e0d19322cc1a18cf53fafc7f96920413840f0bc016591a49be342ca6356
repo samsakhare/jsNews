@@ -1,1 +1,0 @@
-{"ast":null,"code":"import API from \"./API\";\n\nclass NewsAPI extends API {\n  getNewsDetails(url) {\n    return this.request.get(url);\n  }\n\n}\n\nexport default NewsAPI;","map":null,"metadata":{},"sourceType":"module"}
