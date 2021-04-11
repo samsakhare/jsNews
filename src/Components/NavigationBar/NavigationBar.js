@@ -8,10 +8,6 @@ const NavigationBar = () => {
   function toogleMenu() {
     setIsMenuVisible(!isMenuVisible);
   }
-  useEffect(() => {
-    console.log("Current Route: ", router.pathname);
-    console.log("Menu Status: ", isMenuVisible ? "visible" : "hidden");
-  }, []);
   return (
     <>
       <>

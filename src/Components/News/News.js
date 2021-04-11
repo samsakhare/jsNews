@@ -1,30 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NewsTopic from "../../lib/apis/newsTopic.json";
 import NewsHeader from "./Header/NewsHeader";
-const News = () => {
+import NewsCard from "./body/Card";
+import NewsAPI from "../../lib/NewsAPI";
+
+const News = ({ defaultTopic }) => {
+  const [articles, setArticles] = useState(null);
+  const [selectedNewsTopic, setSelectedNewsTopic] = useState(NewsTopic[0]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    selectTopic(selectedNewsTopic);
+  }, [selectedNewsTopic]);
+
+  useEffect(() => {
+    selectTopic(defaultTopic);
+  }, []);
+
+  function selectTopic(topic) {
+    setIsLoading(true);
+    if (topic) {
+      const api = new NewsAPI();
+      api.getNewsDetails(topic.api).then((res) => {
+        setArticles(res.data.articles);
+        setIsLoading(false);
+      });
+    }
+  }
+
   return (
     <>
-      <div className="grid lg:grid-cols-1 lg:grid-rows-1 md:grid-cols-3 md:gap-2 sm:grid-cols-3 sm:gap-2">
+      <div className="grid lg:grid-cols-1 lg:grid-rows-1 md:grid-cols-1 md:gap-2 sm:grid-cols-1 sm:gap-2">
         <NewsHeader
           className="lg:col-span-0 md:col-span-1 sm:col-span-1"
-          newsTopic={NewsTopic}
+          newsTopics={NewsTopic}
+          selectNewsTopic={setSelectedNewsTopic}
+          selectedNewsTopic={selectedNewsTopic}
         />
-        <div className="grid grid-cols-3 grid-rows-3 md:col-span-2 sm:col-span-2">
-          <div>1</div>
-          <div>2</div>
-          <div>3</div>
-          <div>4</div>
-          <div>5</div>
-          <div>6</div>
-          <div>7</div>
-          <div>8</div>
-          <div>9</div>
+        {isLoading && (
+          <h1 className="text-white font-bold text-center bg-gray-400 p-2 rounded-xl w-1/2 m-auto">
+            Loading...
+          </h1>
+        )}
+        <div
+          className="w-full lg:w-full m-auto p-2 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4"
+          style={{
+            opacity: isLoading ? "0.2" : "1",
+          }}
+        >
+          {articles &&
+            articles.map((article, index) => {
+              return <NewsCard key={index} article={article} />;
+            })}
         </div>
       </div>
     </>
   );
 };
 
-//  lg:bg-red-400 md:bg-blue-400 sm:bg-green-400
-// lg:w-3/4 md:w-3/4 sm:w-full mx-auto lg:bg-red-400 md:bg-blue-400 sm:bg-green-400
 export default News;
