@@ -1,10 +1,10 @@
 import React from "react";
 import News from "../Components/News/News";
+import NewsTopic from "../lib/apis/newsTopic.json";
 const Demo = () => {
   return (
     <>
-      <h1>We are in the demo section of the demo</h1>
-      <News />
+      <News defaultTopic={NewsTopic[0]} />
     </>
   );
 };
