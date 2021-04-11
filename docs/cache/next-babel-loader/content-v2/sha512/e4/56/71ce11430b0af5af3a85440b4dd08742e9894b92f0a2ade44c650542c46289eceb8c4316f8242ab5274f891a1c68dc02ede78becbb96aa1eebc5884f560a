@@ -1,0 +1,1 @@
+{"ast":null,"code":"import { jsx as _jsx } from \"react/jsx-runtime\";\nimport React from \"react\";\n\nconst Feature = () => {\n  return /*#__PURE__*/_jsx(\"h1\", {\n    children: \"We are in the feature section of the demo\"\n  });\n};\n\nexport default Feature;","map":null,"metadata":{},"sourceType":"module"}

@@ -1,0 +1,1 @@
+{"ast":null,"code":"import _classCallCheck from \"D:/sameer/development/jsnews/node_modules/@babel/runtime/helpers/esm/classCallCheck\";\nimport axios from \"axios\";\n\nvar API = function API() {\n  _classCallCheck(this, API);\n\n  this.request = axios.create({\n    baseURL: process.env.API_URL\n  });\n};\n\nexport default API;","map":null,"metadata":{},"sourceType":"module"}
